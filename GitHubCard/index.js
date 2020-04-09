@@ -95,7 +95,7 @@ function cardMaker(user) {
 	return card;
 }
 
-function getUsers(user) {
+function getUser(user) {
 	axios.get(`https://api.github.com/users/${user}`)
 		.then(response => {
 			cards.appendChild(cardMaker(response.data));
@@ -105,8 +105,8 @@ function getUsers(user) {
 		})
 }
 
-getUsers('jslohner');
-followersArray.forEach(follower => getUsers(follower));
+getUser('jslohner');
+followersArray.forEach(follower => getUser(follower));
 
 /* List of LS Instructors Github username's:
   tetondan
